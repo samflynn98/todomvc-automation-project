@@ -48,22 +48,14 @@ public class StatusTests {
     public void completionStatusFilterSortsItemsAsExpected() {
         TodoPage page = new TodoPage(driver);
         page.navigate();
-
         page.addItem("test1");
         page.addItem("test2");
-
         page.completeItem(1);
-
         page.clickActiveFilter();
-
         assertEquals(1, page.getNumberOfItems());
-
         page.clickCompletedFilter();
-
         assertEquals(1, page.getNumberOfItems());
-
         page.clickAllFilter();
-
         assertEquals(2, page.getNumberOfItems());
     }
 
